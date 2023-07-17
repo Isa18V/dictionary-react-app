@@ -4,6 +4,7 @@ import "../css/Dictionary.css";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
+  let [results, setResults] = useState({});
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -12,6 +13,7 @@ export default function Dictionary() {
 
   function handleResponse(response) {
     console.log(response.data);
+    setResults(response.data);
   }
 
   function search() {
@@ -35,6 +37,7 @@ export default function Dictionary() {
         />
         <input type="submit" value="Search" />
       </form>
+      <Result />
     </div>
   );
 }
