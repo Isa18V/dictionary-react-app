@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Result from "./Results";
+import Results from "./Results";
 import axios from "axios";
 import "../css/Dictionary.css";
 
@@ -37,7 +37,7 @@ export default function Dictionary() {
         />
         <input type="submit" value="Search" />
       </form>
-      <Result results={results} />
+      <Results results={results} />
     </div>
   );
 }
