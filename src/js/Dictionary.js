@@ -3,9 +3,10 @@ import Results from "./Results";
 import axios from "axios";
 import "../css/Dictionary.css";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -26,19 +27,28 @@ export default function Dictionary() {
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
   }
-
-  return (
-    <div className="Dictionary">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter a keyword"
-          className="dictionaryInput"
-          onChange={handleKeywordChange}
-        />
-        <input type="submit" value="Search" className="dictionarySubmit" />
-      </form>
-      <Results results={results} />
-    </div>
-  );
+  function load() {
+    setLoaded(true);
+    search();
+  }
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter a keyword"
+            className="dictionaryInput"
+            onChange={handleKeywordChange}
+            defaultValue={props.defaultKeyword}
+          />
+          <input type="submit" value="Search" className="dictionarySubmit" />
+        </form>
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading";
+  }
 }

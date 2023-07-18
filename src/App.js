@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header text-center">
-        <Dictionary />
+        <Dictionary defaultKeyword="sunset" />
       </header>
 
       <footer className="text-center">Coded By Isa.V18</footer>

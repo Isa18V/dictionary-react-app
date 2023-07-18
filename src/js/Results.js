@@ -1,11 +1,10 @@
 import React from "react";
 import Meaning from "./Meaning";
-
 import "../css/Results.css";
 
 export default function Results(props) {
-  if (props.results) {
-    const uniquePartOfSpeech = [0];
+  if (props.results && Array.isArray(props.results.meanings)) {
+    const uniquePartOfSpeech = [];
 
     return (
       <div className="Results">
