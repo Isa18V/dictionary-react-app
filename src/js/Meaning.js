@@ -15,14 +15,22 @@ export default function Meaning(props) {
           <strong>Example: </strong> <em>{props.meaning.example}</em>
         </p>
         <ul>
-          {props.meaning.synonyms && (
+          {props.meaning.synonyms && props.meaning.synonyms.length > 0 && (
             <li>
-              <strong>Synonyms: </strong> {props.meaning.synonyms.join(", ")}
+              <strong>Synonyms: </strong>
+              {props.meaning.synonyms.map((synonym, index) => (
+                <span key={index}>{synonym}</span>
+              ))}
             </li>
           )}
-          {props.meaning.antonyms && (
+        </ul>
+        <ul>
+          {props.meaning.antonyms && props.meaning.antonyms.length > 0 && (
             <li>
-              <strong> Antonyms: </strong> {props.meaning.antonyms.join(", ")}
+              <strong>Antonyms: </strong>
+              {props.meaning.antonyms.map((antonym, index) => (
+                <span key={index}>{antonym}</span>
+              ))}
             </li>
           )}
         </ul>
