@@ -33,9 +33,10 @@ export default function Dictionary() {
         <input
           type="text"
           placeholder="Enter a keyword"
+          className="dictionaryInput"
           onChange={handleKeywordChange}
         />
-        <input type="submit" value="Search" />
+        <input type="submit" value="Search" className="dictionarySubmit" />
       </form>
       <Results results={results} />
     </div>
