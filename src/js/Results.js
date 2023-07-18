@@ -4,15 +4,21 @@ import "../css/Results.css";
 
 export default function Results(props) {
   if (props.results) {
+    const uniquePartOfSpeech = [];
+
     return (
       <div className="Results">
         <h2>{props.results.word}</h2>
-        {props.results.meanings.map(function (meaning, index) {
-          return (
-            <div key={index}>
-              <Meaning meaning={meaning} />
-            </div>
-          );
+        {props.results.meanings.map((meaning) => {
+          if (!uniquePartOfSpeech.includes(meaning.partOfSpeech)) {
+            uniquePartOfSpeech.push(meaning.partOfSpeech);
+            return (
+              <div key={meaning.partOfSpeech}>
+                <Meaning meaning={meaning} />
+              </div>
+            );
+          }
+          return null;
         })}
       </div>
     );
