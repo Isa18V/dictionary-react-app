@@ -6,15 +6,16 @@
   box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
   font-size: medium;
   font-weight: bold;
-  max-width: 200px;
+  width: 400px;
+  max-width: none;
 }
 .dictionaryInput {
   outline-color: white;
-  place-content: "Enter your message!";
 }
 
 .dictionarySubmit {
   margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: 10px;
   color: #090909;
   padding: 0.7em 1.7em;

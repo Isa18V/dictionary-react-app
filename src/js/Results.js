@@ -9,9 +9,10 @@ export default function Results(props) {
 
     return (
       <div className="Results">
-        <h2>{props.results.word}</h2>
-        <p>/{props.results.phonetic}/</p>
-
+        <div className="ResultsWordPhonetic">
+          <h2>{props.results.word}</h2>
+          <p>/{props.results.phonetic}/</p>
+        </div>
         {props.results.meanings.map((meaning) => {
           if (!uniquePartOfSpeech.includes(meaning.partOfSpeech)) {
             uniquePartOfSpeech.push(meaning.partOfSpeech);

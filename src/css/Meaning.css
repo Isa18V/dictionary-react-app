@@ -1,17 +1,15 @@
-.Results {
-  margin-left: 40px;
-  margin-right: 40px;
+.meaningContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
-.ResultsWordPhonetic {
+.meaningDefinitionExample {
   margin-top: 20px;
+  text-align: left;
   margin-bottom: 20px;
-  margin-left: 10px;
-  width: auto;
+  width: 800px;
   height: auto;
+  margin-left: 10px;
   color: #090909;
   padding: 0.7em 1.7em;
   font-size: 18px;
