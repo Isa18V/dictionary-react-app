@@ -1,38 +1,33 @@
 import React from "react";
 
 export default function Meaning(props) {
+  const { partOfSpeech, definition, phonetic, example, synonyms, antonyms } =
+    props.meaning;
+
   return (
     <div className="meaning">
-      <h3>{props.meaning.partOfSpeech}</h3>
+      <h3>{partOfSpeech}</h3>
       <div>
         <p>
-          <strong>Definition: </strong> {props.meaning.definition}
+          <strong>Definition: </strong> {definition}
         </p>
         <p>
-          <strong>Phonetic: </strong> {props.meaning.phonetic}
+          <strong>Phonetic: </strong> {phonetic}
         </p>
         <p>
-          <strong>Example: </strong> <em>{props.meaning.example}</em>
+          <strong>Example: </strong> <em>{example}</em>
         </p>
         <ul>
-          {props.meaning.synonyms && props.meaning.synonyms.length > 0 && (
-            <li>
-              <strong>Synonyms: </strong>
-              {props.meaning.synonyms.map((synonym, index) => (
-                <span key={index}>{synonym}</span>
-              ))}
-            </li>
-          )}
+          <li>
+            <strong>Synonyms: </strong>
+            {synonyms}
+          </li>
         </ul>
         <ul>
-          {props.meaning.antonyms && props.meaning.antonyms.length > 0 && (
-            <li>
-              <strong>Antonyms: </strong>
-              {props.meaning.antonyms.map((antonym, index) => (
-                <span key={index}>{antonym}</span>
-              ))}
-            </li>
-          )}
+          <li>
+            <strong>Antonyms: </strong>
+            {antonyms}
+          </li>
         </ul>
       </div>
     </div>
