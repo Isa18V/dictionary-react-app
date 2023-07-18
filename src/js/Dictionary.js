@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Results from "./Results";
+import Photos from "./Photos";
 import axios from "axios";
 import "../css/Dictionary.css";
 
@@ -19,6 +20,7 @@ export default function Dictionary(props) {
   }
   function handlePictureResponse(response) {
     console.log(response);
+    setPhotos(response.data.photos);
   }
 
   function search() {
@@ -53,6 +55,7 @@ export default function Dictionary(props) {
           <input type="submit" value="Search" className="dictionarySubmit" />
         </form>
         <Results results={results} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
