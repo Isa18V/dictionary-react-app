@@ -11,12 +11,6 @@ export default function Synonyms(props) {
             {props.synonyms}
           </li>
         </ul>
-        <ul>
-          <li>
-            <strong>Antonyms: </strong>
-            {props.antonyms}
-          </li>
-        </ul>
       </div>
     </div>
   );
