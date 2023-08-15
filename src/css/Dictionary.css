@@ -33,7 +33,7 @@
 .dictionarySubmit:active {
   box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
 }
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .dictionaryInput {
     width: auto;
   }
