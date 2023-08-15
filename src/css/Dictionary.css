@@ -6,7 +6,7 @@
   box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
   font-size: medium;
   font-weight: bold;
-  width: auto;
+  width: 400px;
   max-width: none;
 }
 .dictionaryInput {
@@ -32,4 +32,9 @@
 
 .dictionarySubmit:active {
   box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+@media (max-width: 400px) {
+  .dictionaryInput {
+    width: auto;
+  }
 }
