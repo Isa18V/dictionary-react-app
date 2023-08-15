@@ -6,7 +6,7 @@
   box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
   font-size: medium;
   font-weight: bold;
-  width: 400px;
+  width: auto;
   max-width: none;
 }
 .dictionaryInput {
